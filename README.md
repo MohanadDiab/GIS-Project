@@ -1,5 +1,5 @@
 # GIS-Project
-This repository is dedicated to present the GIS project of group 7.
+This repository is dedicated to present the GIS project of group 7.__
 The project focuses on the area depicted in the picture under the name of **"Group 7"**.
 
 
