@@ -1,5 +1,5 @@
 $datestamp
-[1] "2023-05-30 17:07:17 CEST"
+[1] "2023-06-06 16:36:03 CEST"
 
 $model.type
 [1] "RF"
@@ -35,7 +35,7 @@ $seed
 $na.action
 function (object, ...) 
 UseMethod("na.omit")
-<bytecode: 0x00000201853630b8>
+<bytecode: 0x000001df1c16d008>
 <environment: namespace:stats>
 
 $keep.data

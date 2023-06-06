@@ -1,16 +1,16 @@
 $datestamp
-[1] "2023-05-30 17:10:55 CEST"
+[1] "2023-06-06 16:39:36 CEST"
 
 $model.obj
 
 Call:
- randomForest(x = qdata.x, y = qdata.y, ntree = 500, mtry = 6,      replace = TRUE, importance = TRUE, proximity = FALSE) 
+ randomForest(x = qdata.x, y = qdata.y, ntree = 500, mtry = 3,      replace = TRUE, importance = TRUE, proximity = FALSE) 
                Type of random forest: regression
                      Number of trees: 500
-No. of variables tried at each split: 6
+No. of variables tried at each split: 3
 
-          Mean of squared residuals: 0.1101723
-                    % Var explained: 55.74
+          Mean of squared residuals: 0.1118825
+                    % Var explained: 55.25
 
 $folder
 [1] "C:/Users/mohan/Documents/GitHub/GIS-Project/Dataset/working folder"

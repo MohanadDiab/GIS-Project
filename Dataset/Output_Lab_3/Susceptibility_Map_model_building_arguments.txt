@@ -1,5 +1,5 @@
 $datestamp
-[1] "2023-06-06 12:05:21 CEST"
+[1] "2023-06-06 17:24:40 CEST"
 
 $model.type
 [1] "RF"
@@ -8,10 +8,10 @@ $qdata.trainfn
 [1] "preloaded dataframe"
 
 $folder
-[1] "D:/GIS_GROUP_7/GIS-Project-main/Dataset/Lombardy/Output_Lab_3"
+[1] "C:/Users/mohan/Documents/GitHub/GIS-Project/Dataset/Output_Lab_3"
 
 $MODELfn
-[1] "D:/GIS_GROUP_7/GIS-Project-main/Dataset/Lombardy/Output_Lab_3/Susceptibility_Map"
+[1] "C:/Users/mohan/Documents/GitHub/GIS-Project/Dataset/Output_Lab_3/Susceptibility_Map"
 
 $predList
 [1] "aspect"  "dtm"     "ndvi"    "rivers"  "faults"  "dusaf"   "roads"  
@@ -35,7 +35,7 @@ $seed
 $na.action
 function (object, ...) 
 UseMethod("na.omit")
-<bytecode: 0x0000000012d52868>
+<bytecode: 0x000001eb95f9b0f8>
 <environment: namespace:stats>
 
 $keep.data
