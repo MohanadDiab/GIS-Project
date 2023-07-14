@@ -1,6 +1,3 @@
-Thanks for downloading this template!
+Index.html is the main page.
 
-Template Name: Logis
-Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Services.html includes the mapping service.
