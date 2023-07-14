@@ -693,6 +693,33 @@ section {
 .featured-services .service-item:hover .icon i {
   color: var(--color-primary);
 }
+/* ADDED BY ME */
+
+.enlarge-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.enlarge-image.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8); /* Increase the scale factor as desired */
+  z-index: 9999; /* Adjust the z-index as needed to ensure it appears above other elements */
+}
+
+.enlarge-image2 {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.enlarge-image2.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5); /* Increase the scale factor as desired */
+  z-index: 9999; /* Adjust the z-index as needed to ensure it appears above other elements */
+}
 
 /*--------------------------------------------------------------
 # About Us Section

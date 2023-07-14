@@ -1,9 +1,9 @@
-const initialZoom = 10;
+const initialZoom = 11;
 const initialCoordinates = [10.01481, 46.23869];
 var bingKey = 'AgtG84GxqgWsJZDR1jn1ROSuXfgcQTtJQxqL1FoWEac7JtF9uKRWw72QbZY9Criv'
 
-var url_wms = 'https://www.gis-geoserver.polimi.it/geoserver/wms';
-var workspace_name = 'gisgeoserver_9';
+var url_wms = 'http://localhost:8080/geoserver/wms';
+var workspace_name = 'g7';
 
 
 // Create OSM layer
@@ -57,7 +57,7 @@ var Sm = new ol.layer.Image({
   title: "Susceptibility Map",
   source: new ol.source.ImageWMS({
     url: url_wms,
-    params: { 'LAYERS': workspace_name + ":LandslideSusceptibilityMap" },
+    params: { 'LAYERS': workspace_name + ":susceptibility_map" },
   }),
   crossOrigin: "Anonymous",
 });
@@ -65,7 +65,7 @@ var Smp = new ol.layer.Image({
   title: "Susceptibility Map Reclassified",
   source: new ol.source.ImageWMS({
     url: url_wms,
-    params: { 'LAYERS': workspace_name + ":SuscMapPop" },
+    params: { 'LAYERS': workspace_name + ":LandslideSusceptibilityMap_reclass" },
   }),
   crossOrigin: "Anonymous",
 });
@@ -77,14 +77,7 @@ var population = new ol.layer.Image({
   }),
   crossOrigin: "Anonymous",
 });
-var dusaf = new ol.layer.Image({
-  title: "Land Use & Land Cover ",
-  source: new ol.source.ImageWMS({
-    url: url_wms,
-    params: { 'LAYERS': workspace_name + ":dusaf" },
-  }),
-  crossOrigin: "Anonymous",
-});
+
 var ndvi = new ol.layer.Image({
   title: "NDVI ",
   source: new ol.source.ImageWMS({
@@ -117,47 +110,9 @@ var faults = new ol.layer.Image({
   }),
   crossOrigin: "Anonymous",
 });
-var plan = new ol.layer.Image({
-  title: "Plan",
-  source: new ol.source.ImageWMS({
-    url: url_wms,
-    params: { 'LAYERS': workspace_name + ":plan" },
-  }),
-  crossOrigin: "Anonymous",
-});
-var profile = new ol.layer.Image({
-  title: "Profile",
-  source: new ol.source.ImageWMS({
-    url: url_wms,
-    params: { 'LAYERS': workspace_name + ":profile" },
-  }),
-  crossOrigin: "Anonymous",
-});
 
-var MergeNLZLS = new ol.layer.Image({
-  title: "NLZ ",
-  source: new ol.source.ImageWMS({
-    url: url_wms,
-    params: { 'LAYERS': workspace_name + ":MergeNLZLS" },
-  }),
-  crossOrigin: "Anonymous",
-});
-var trainingpoints = new ol.layer.Image({
-  title: "Training Points Sampled ",
-  source: new ol.source.ImageWMS({
-    url: url_wms,
-    params: { 'LAYERS': workspace_name + ":trainingPointsSampled" },
-  }),
-  crossOrigin: "Anonymous",
-});
-var testingpoints = new ol.layer.Image({
-  title: "Testing Points Sampled ",
-  source: new ol.source.ImageWMS({
-    url: url_wms,
-    params: { 'LAYERS': workspace_name + ":testingPointsSampled" },
-  }),
-  crossOrigin: "Anonymous",
-});
+
+
 
 let scaleControl = new ol.control.ScaleLine(); // Scale control
 let zoomControl = new ol.control.Zoom(); // Zoom control
@@ -176,25 +131,21 @@ let map = new ol.Map({
   layers: [ bingLayer, 
             osmLayer,
             new ol.layer.Group({
-              title: "Overlay Layers",
+              title: "Susceptinility & Population",
               layers: [
-                
-                population,
                 Smp,
                 Sm,
-                testingpoints,
-                trainingpoints,
-                MergeNLZLS,
-                ndvi,
+                population
+              ],
+            }),
+            new ol.layer.Group({
+              title: "Overlay Layers",
+              layers: [
                 roads,
                 faults,
                 rivers,
-                aspect,
                 slope,
-                dusaf,
                 dtm,
-                plan,
-                profile,
               ],
             }),
   ],
